@@ -158,7 +158,6 @@ bool subghz_protocol_encoder_princeton_deserialize(void* context, FlipperFormat*
             FURI_LOG_E(TAG, "Missing TE");
             break;
         }
-
         if(instance->generic.data_count_bit !=
            subghz_protocol_princeton_const.min_count_bit_for_found) {
             FURI_LOG_E(TAG, "Wrong number of bits in key");
@@ -364,7 +363,7 @@ void subghz_protocol_decoder_princeton_get_string(void* context, string_t output
         "%s %dbit\r\n"
         "Key:0x%08lX\r\n"
         "Yek:0x%08lX\r\n"
-        "Sn:0x%05lX BTN:%02X\r\n"
+        "Sn:0x%05lX BTN:%01X\r\n"
         "Te:%dus\r\n",
         instance->generic.protocol_name,
         instance->generic.data_count_bit,
